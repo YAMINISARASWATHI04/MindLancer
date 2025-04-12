@@ -6,6 +6,7 @@ import { useAuth } from '../context/AuthContext';
 function Header() {
   const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isSmartMenuOpen, setIsSmartMenuOpen] = React.useState(false);
 
   const dashboardLink =
     user?.role === 'admin'
@@ -77,6 +78,43 @@ function Header() {
                 </Link>
               </>
             )}
+
+            {/* Smart Services Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsSmartMenuOpen((prev) => !prev)}
+                className="flex items-center px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              >
+                Smart Services
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </button>
+              {isSmartMenuOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-white shadow-md rounded-md py-2 z-50">
+                  <a
+                    href="http://localhost:5173/resume"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-black"
+                    onClick={() => setIsSmartMenuOpen(false)}
+                  >
+                    Resume Generator
+                  </a>
+                  <a
+                    href="http://localhost:5173/upload"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-black"
+                    onClick={() => setIsSmartMenuOpen(false)}
+                  >
+                    ATS Evaluator
+                  </a>
+                  <a
+                    href="http://localhost:5173/smartjob"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-black"
+                    onClick={() => setIsSmartMenuOpen(false)}
+                  >
+                    Smart Job Recommendation
+                  </a>
+                </div>
+              )}
+              <div className="text-sm text-gray-500 mt-1 text-center">Smart Services</div>
+            </div>
           </div>
 
           {/* Mobile Menu Toggle */}

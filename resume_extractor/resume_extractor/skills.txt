@@ -1,0 +1,11 @@
+Python
+Java
+C++
+React
+Node.js
+SQL
+HTML
+CSS
+Machine Learning
+Django
+Flask
