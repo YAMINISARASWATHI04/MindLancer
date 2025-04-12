@@ -1,0 +1,15 @@
+[
+    {
+      "name": "Yamini",
+      "skills": "MERN stack, React, Node.js, MongoDB",
+      "experience": "2 freelance projects using MERN stack",
+      "portfolio": "Built a scalable e-commerce app and chatbot."
+    },
+    {
+      "name": "Ishu",
+      "skills": "Python, Django, PostgreSQL",
+      "experience": "Backend developer with 3 years of experience",
+      "portfolio": "Built APIs for a job portal and real-time chat system."
+    }
+  ]
+  
